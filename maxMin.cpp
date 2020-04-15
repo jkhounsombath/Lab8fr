@@ -3,7 +3,7 @@
 void maxMin::resize()
 {
   game* tempArr= nullptr;
-	m_size= ((m_size+1)*2);
+	m_size= ((m_size+1)*2)+2;
 	tempArr= new game[m_size];
 	for(int i=0; i<m_heapSize; i++)
 	{
