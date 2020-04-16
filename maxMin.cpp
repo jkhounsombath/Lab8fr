@@ -3,7 +3,7 @@
 void maxMin::resize()
 {
   game* tempArr= nullptr;
-	m_size= ((m_size+1)*2)+2;
+	m_size= ((m_size+1)*2)-1;
 	tempArr= new game[m_size];
 	for(int i=0; i<m_heapSize; i++)
 	{
@@ -11,7 +11,6 @@ void maxMin::resize()
 	}
 	delete[] m_arr;
 	m_arr= tempArr;
-  delete[]tempArr;
 }
 
 maxMin::maxMin()
@@ -80,7 +79,7 @@ void maxMin::heapify(int curPos)
 
 void maxMin::insert(game tempGame)
 {
-  if(m_size == m_heapSize)//resize
+  while(m_size == m_heapSize)//resize
   {
     resize();
   }
