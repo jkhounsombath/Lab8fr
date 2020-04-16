@@ -20,5 +20,6 @@ class maxMin
     ~maxMin();
     void heapify(int curPos);
     void insert(game tempGame);
+    void print();
 };
 #endif

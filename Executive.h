@@ -17,5 +17,6 @@ class Executive
 		Executive(std::string fileName);
 		void run();
 		~Executive();
+		void menu();
 };
 #endif

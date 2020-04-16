@@ -15,8 +15,8 @@ void maxMin::resize()
 
 maxMin::maxMin()
 {
-  m_arr = nullptr;
-  m_size = 0;
+  m_arr = new game[500];
+  m_size = 500;
   m_heapSize = 0;
 }
 
@@ -79,10 +79,6 @@ void maxMin::heapify(int curPos)
 
 void maxMin::insert(game tempGame)
 {
-  while(m_size == m_heapSize)//resize
-  {
-    resize();
-  }
   if(m_arr[1].getName() == "")
   {
     m_arr[1] = tempGame;
@@ -96,5 +92,14 @@ void maxMin::insert(game tempGame)
       heapify(i);
       break;
     }
+  }
+}
+
+void maxMin::print()
+{
+  std::cout<<"Made it to print\n";
+  for(int i= 1; i<m_heapSize; i++)
+  {
+    std::cout<<"Game: "<<m_arr[i].getName()<<" Downloads: "<<m_arr[i].getDownloads()<<std::endl;
   }
 }
